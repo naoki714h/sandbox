@@ -1,0 +1,33 @@
+@use 'var' as *;
+
+@mixin pc {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+@mixin tab {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+@mixin horizontal {
+	@media all and (orientation: landscape) {
+		@content;
+	}
+}
+@mixin vertical {
+	@media all and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin sample($width: 29.5rem, $height: 6rem, $fontSize: 1rem) {
+	width: $width;
+	height: $height;
+	font-size: $fontSize;
+
+	@include tab {
+		width: 31rem;
+		height: 6.6rem;
+	}
+}
