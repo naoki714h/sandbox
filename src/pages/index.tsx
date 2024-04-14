@@ -1,5 +1,5 @@
-import { CustomHead } from '@/utils/CustomHead';
-import { Counter } from '@/components/Counter';
+import { CustomHead } from "@/utils/CustomHead";
+import { Counter } from "@/components/Counter";
 
 export default function Home() {
   return (

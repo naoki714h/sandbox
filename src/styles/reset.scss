@@ -80,23 +80,23 @@ mark,
 audio,
 video,
 picture {
-	margin: 0;
-	padding: 0;
-	vertical-align: bottom;
-	border: 0;
-	outline: 0;
-	background: transparent;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+  border: 0;
+  outline: 0;
+  background: transparent;
 
-	-webkit-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
 }
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 article,
 aside,
@@ -111,28 +111,28 @@ nav,
 section,
 main,
 picture {
-	display: block;
+  display: block;
 }
 ol,
 ul,
 li {
-	list-style: none;
+  list-style: none;
 }
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 :focus {
-	outline: 0;
+  outline: 0;
 }
 ins,
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 del {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 table {
-	border-spacing: 0;
-	border-collapse: collapse;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
