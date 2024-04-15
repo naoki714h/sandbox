@@ -1,5 +1,8 @@
 import { CustomHead } from "@/utils/CustomHead";
 import { Counter } from "@/components/Counter";
+import { Wordbook } from "@/components/Wordbook";
+import { WordbookInput } from "@/components/WordbookInput";
+import { WordbookCategoryInput } from "@/components/WordbookCategoryInput";
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       />
       <p>top</p>
       <Counter />
+      <WordbookCategoryInput />
+      <WordbookInput />
+      <Wordbook />
     </>
   );
 }

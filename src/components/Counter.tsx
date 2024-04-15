@@ -2,8 +2,8 @@ import { useAppDispatch, useAppSelector } from "@/types/redux";
 import { incremented, decremented } from "@/redux/slice/counterSlice";
 
 export function Counter() {
-  const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
+  const count = useAppSelector((state) => state.counter.value);
 
   return (
     <div>
