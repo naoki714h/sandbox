@@ -4,6 +4,7 @@ import { Wordbook } from "@/components/Wordbook";
 import { WordbookInput } from "@/components/WordbookInput";
 import { WordbookCategoryInput } from "@/components/WordbookCategoryInput";
 import { Weather } from "@/components/Weather";
+import { TideInfo } from "@/components/TideInfo";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Wordbook />
 
       <Weather />
+      <TideInfo />
     </>
   );
 }
