@@ -43,7 +43,10 @@ export function Weather() {
               alt={forecast.image.title}
               width={forecast.image.width}
               height={forecast.image.height}
-              style={{ width: forecast.image.width, height: forecast.image.height }}
+              style={{
+                width: forecast.image.width,
+                height: forecast.image.height,
+              }}
             />
           </div>
         ))}
