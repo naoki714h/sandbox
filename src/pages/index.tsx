@@ -3,6 +3,7 @@ import { Counter } from "@/components/Counter";
 import { Wordbook } from "@/components/Wordbook";
 import { WordbookInput } from "@/components/WordbookInput";
 import { WordbookCategoryInput } from "@/components/WordbookCategoryInput";
+import { Weather } from "@/components/Weather";
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
       <WordbookCategoryInput />
       <WordbookInput />
       <Wordbook />
+
+      <Weather />
     </>
   );
 }
