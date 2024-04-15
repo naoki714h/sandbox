@@ -1,5 +1,6 @@
 import { useFetchData } from "@/utils/useFetchData";
 import { WeatherForecast } from "@/types/weather";
+import Image from "next/image";
 
 export function Weather() {
   const url = "https://weather.tsukumijima.net/api/forecast";
@@ -37,11 +38,12 @@ export function Weather() {
             <p>最高気温: {forecast.temperature.max?.celsius || "--"}°C</p>
             <p>風: {forecast.detail.wind}</p>
             <p>波: {forecast.detail.wave}</p>
-            <img
+            <Image
               src={forecast.image.url}
               alt={forecast.image.title}
               width={forecast.image.width}
               height={forecast.image.height}
+              style={{ width: forecast.image.width, height: forecast.image.height }}
             />
           </div>
         ))}
