@@ -2,6 +2,8 @@ import { useAppDispatch, useAppSelector } from "@/types/redux";
 import { addWord } from "@/redux/slice/addWordSlice";
 import { addCategory } from "@/redux/slice/addWordCategorySlice";
 
+import styles from "@/components/WordbookInput.module.scss";
+
 export function WordbookInput() {
   const dispatch = useAppDispatch();
   const categories = useAppSelector((state) => state.addCategory.categories);
@@ -9,6 +11,8 @@ export function WordbookInput() {
   // 単語を追加する関数
   const addWordHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!e.currentTarget.word.value || !e.currentTarget.content.value) return;
+
     selectUnCategorized();
     const id = Math.random().toString(32).substring(2);
     const category_id = e.currentTarget.category.value || "uncategorized";
@@ -36,20 +40,41 @@ export function WordbookInput() {
   };
 
   return (
-    <div>
-      <h2>単語を登録できます</h2>
+    <div className={styles.content}>
+      <h2 className={styles.title}>単語を登録</h2>
       <form onSubmit={addWordHandler}>
-        <input type="text" name="word" placeholder="単語" />
-        <input type="text" name="content" placeholder="内容" />
-        <select name="category" id="" defaultValue="default">
-          <option value="">選択してください</option>
-          {categories.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.categoryName}
-            </option>
-          ))}
-        </select>
-        <button type="submit">追加</button>
+        <div className={styles.item}>
+          <label htmlFor="word">単語※</label>
+          <input
+            type="text"
+            name="word"
+            id="word"
+            placeholder="入力してください"
+          />
+        </div>
+        <div className={styles.item}>
+          <label htmlFor="content">内容※</label>
+          <input
+            type="text"
+            name="content"
+            id="content"
+            placeholder="入力してください"
+          />
+        </div>
+        <div className={styles.item}>
+          <label htmlFor="category">カテゴリー</label>
+          <select name="category" id="category">
+            <option value="">選択してください</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.categoryName}
+              </option>
+            ))}
+          </select>
+        </div>
+        <button type="submit" className={styles.button}>
+          追加
+        </button>
       </form>
     </div>
   );

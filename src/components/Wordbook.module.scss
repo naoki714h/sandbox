@@ -1,0 +1,67 @@
+@use "@/styles/summarize" as *;
+
+.wordbook {
+  @include innerWidth;
+  padding: 6rem 0;
+  margin: 6rem auto;
+  border-top: 0.1rem solid $gray;
+  border-bottom: 0.1rem solid $gray;
+}
+
+.wordbookTitle {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  @include pc {
+    font-size: 2.8rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.wordbookContent {
+  background-color: $white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba($black, 0.1);
+  & + & {
+    margin-top: 2rem;
+  }
+}
+
+.categoryTitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid $gray;
+  @include pc {
+    font-size: 2rem;
+  }
+}
+
+.wordbookItem {
+  display: flex;
+  & + & {
+    margin-top: 2rem;
+  }
+  div:nth-of-type(1) {
+    width: 20%;
+    padding-right: 3rem;
+  }
+  div:nth-of-type(2) {
+    width: 80%;
+  }
+}
+
+.wordbookItemTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  @include pc {
+    font-size: 1.6rem;
+  }
+}
+
+.wordbookItemText {
+  font-size: 1.4rem;
+  @include pc {
+    font-size: 1.6rem;
+  }
+}

@@ -31,3 +31,13 @@
     height: 6.6rem;
   }
 }
+
+@mixin innerWidth($width: 90%) {
+  width: $width;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include tab {
+    max-width: 120rem;
+  }
+}

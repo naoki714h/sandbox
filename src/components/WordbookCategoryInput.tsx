@@ -1,12 +1,16 @@
 import { useAppDispatch } from "@/types/redux";
 import { addCategory } from "@/redux/slice/addWordCategorySlice";
 
+import styles from "@/components/WordbookCategoryInput.module.scss";
+
 export function WordbookCategoryInput() {
   const dispatch = useAppDispatch();
 
   // 単語を追加する関数
   const addCategoryHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!e.currentTarget.categoryName.value) return;
+
     const id = Math.random().toString(32).substring(2);
     const categoryName = e.currentTarget.categoryName.value;
     const content = e.currentTarget.content.value;
@@ -18,11 +22,29 @@ export function WordbookCategoryInput() {
 
   return (
     <div>
-      <h2>カテゴリーを追加できます</h2>
+      <h2 className={styles.title}>カテゴリーを追加</h2>
       <form onSubmit={addCategoryHandler}>
-        <input type="text" name="categoryName" placeholder="カテゴリー名" />
-        <input type="text" name="content" placeholder="ディスクリプション" />
-        <button type="submit">追加</button>
+        <div className={styles.item}>
+          <label htmlFor="categoryName">カテゴリー名※</label>
+          <input
+            type="text"
+            name="categoryName"
+            id="categoryName"
+            placeholder="入力してください"
+          />
+        </div>
+        <div className={styles.item}>
+          <label htmlFor="content">説明</label>
+          <input
+            type="text"
+            name="content"
+            id="content"
+            placeholder="入力してください"
+          />
+        </div>
+        <button type="submit" className={styles.button}>
+          追加
+        </button>
       </form>
     </div>
   );
